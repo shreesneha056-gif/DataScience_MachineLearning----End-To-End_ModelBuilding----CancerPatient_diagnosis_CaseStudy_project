@@ -1,54 +1,43 @@
-# DataScience_MachineLearning----End-To-End_ModelBuilding----CancerPatient_diagnosis_CaseStudy_project
-# Cancer Patient Detection using Machine Learning
+# 🏥 Cancer Patient Diagnosis — ML Classification
 
-An end-to-end machine learning pipeline built to predict and classify breast cancer diagnoses (Malignant vs. Benign). The project follows a rigorous engineering workflow involving data fetching, outlier mitigation via feature clipping, multicollinearity resolution using Variance Inflation Factor (VIF), and predictive modeling with advanced statistical and tree-based classifiers.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Healthcare](https://img.shields.io/badge/Domain-Healthcare-red?style=flat-square)
 
-## 📌 Project Overview
-Early detection of breast cancer plays a critical role in clinical treatments and patient survival rates. This project leverages the **Breast Cancer Dataset** from Kaggle to train machine learning algorithms that identify malignant tumors based on geometric, texture, and structural features extracted from cell nuclei digital images.
+> End-to-end ML classification pipeline to diagnose cancer patients using supervised learning algorithms.
 
-## 🛠️ Tech Stack & Dependencies
-The pipeline is entirely engineered in Python utilizing the following environments and libraries:
-* **Environment:** Jupyter Notebook / Google Colab
-* **Data Fetching:** `opendatasets`
-* **Core Analytics:** `pandas`, `numpy`
-* **Data Visualization:** `matplotlib`, `seaborn`
-* **Statistical & ML Modeling:** `scikit-learn`, `statsmodels`, `xgboost`, `catboost`
+---
 
-## 📂 Dataset Details
-* **Source:** Kaggle - Breast Cancer Dataset (via `wasiqaliyasir/breast-cancer-dataset`)
-* **Size:** 569 instances with 33 initial columns
-* **Target Feature (`diagnosis`):** Binary encoded into:
-  * `1` - Malignant (212 cases)
-  * `0` - Benign (357 cases)
+## 📌 Problem Statement
+Early and accurate cancer diagnosis is life-saving. This project applies machine learning to patient data to classify cancer diagnoses, enabling faster clinical decision-making.
 
-## ⚙️ Data Preprocessing & Feature Engineering
-1. **Target Variable Transformation:** Evaluated categorical indicators and applied binary numerical mappings.
-2. **Outlier Mitigation:** Handled highly skewed distributions and extreme variations by clipping numeric feature values to the 1st and 99th percentiles.
-3. **Feature Cleaning:** Standardized column naming structures (replacing structural spacing with snake_case formatting) and stripped redundant indexes (`id`, `Unnamed:_32`).
-4. **Multicolliniarity Resolution (VIF Analysis):** To resolve model instability stemming from highly correlated geometric features (e.g., radius vs. perimeter vs. area), a **Variance Inflation Factor (VIF)** restriction threshold of $\le 80$ was imposed. 
-5. **Feature Scaling:** Applied a `StandardScaler` standard normal normalization ($\mu=0, \sigma=1$) across the finalized standard error features.
+## 🎯 Key Results
+| Task | Technique |
+|------|-----------|
+| Binary/Multiclass Classification | Scikit-learn ML models |
+| Preprocessing | Missing value handling, feature scaling |
+| Evaluation | Accuracy, Precision, Recall, F1-Score |
 
-### Finalized Key Features
-Following programmatic statistical elimination, the finalized predictive features focusing on cell standard errors (`_se`) include:
-* `texture_se`, `smoothness_se`, `compactness_se`, `concavity_se`, `concave_points_se`, `symmetry_se`, `fractal_dimension_se`
+## 🛠️ Tech Stack
+- **Language:** Python
+- **ML:** Scikit-learn
+- **Data Processing:** Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
 
-## 📊 Model Training & Evaluation
-The repository includes multiple baseline experiments using statistical modeling. Data is systematically split into an **80/20 train-test ratio** to ensure proper evaluation.
-
-### Statistical Baseline: Logistic Regression (via Statsmodels Logit)
-A generalized linear baseline model was established utilizing maximum likelihood estimation (MLE):
-* **Train Set Accuracy:** 77% (F1-score: 0.82 Benign, 0.67 Malignant)
-* **Test Set Accuracy:** 76% (F1-score: 0.83 Benign, 0.58 Malignant)
-
-### Machine Learning Framework Integration
-The framework preps and imports the setup foundations for high-performing modern classification networks, including:
-* **Traditional Classifiers:** Decision Trees, Random Forest, K-Nearest Neighbors (KNN), Support Vector Classifier (SVC), Naive Bayes (Gaussian, Bernoulli, Categorical)
-* **Ensemble Boosters:** Bagging, AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost
-* **Meta-Estimators:** Voting Classifier for optimal final decision blending
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
+## 🚀 How to Run
 ```bash
-git clone [https://github.com/YOUR_USERNAME/cancer-patient-detection.git](https://github.com/YOUR_USERNAME/cancer-patient-detection.git)
-cd cancer-patient-detection
+git clone https://github.com/shreesneha056-gif/cancer-patient-diagnosis-ml.git
+cd cancer-patient-diagnosis-ml
+pip install -r requirements.txt
+jupyter notebook
+```
+
+## 📊 Pipeline Overview
+1. EDA & Feature Analysis
+2. Data Preprocessing
+3. Model Training (Logistic Regression, SVM, Random Forest)
+4. Hyperparameter Tuning
+5. Evaluation & Model Selection
+
+---
+📫 [LinkedIn](https://www.linkedin.com/in/sneha-shree-mu/) | [Portfolio](https://shreesneha056-gif.github.io/portfolio_website/) | [GitHub](https://github.com/shreesneha056-gif)
